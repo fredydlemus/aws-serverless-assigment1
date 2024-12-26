@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  ApiGatewayApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Dev
+      DefinitionBody:
+        openapi: 3.0.1
+        info:
+          title: !Sub ${AWS::StackName}-api
+          version: 1.0.0
+        paths:
+          /fetch-data:
+            get:
+              x-amazon-apigateway-integration:
+                type: mock
+                requestTemplates:
+                  application/json: "{\"statusCode\": 200}"
+                responses:
+                  default:
+                    statusCode: 200
+                    responseTemplates:
+                      application/json: "{message: Hello, World!}"
