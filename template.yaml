@@ -69,7 +69,7 @@ Resources:
                   application/json: "{\"statusCode\": 200}"
                 responses:
                   default:
-                    statusCode: "2010-09-09"
+                    statusCode: "200"
                     responseParameters:
                       method.response.header.Access-Control-Allow-Origin: "'*'"
                       method.response.header.Access-Control-Allow-Headers: 
