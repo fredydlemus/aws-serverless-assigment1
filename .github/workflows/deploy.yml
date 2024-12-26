@@ -34,6 +34,6 @@ jobs:
               run: |
                 sam deploy --stack-name ${{env.STACK_NAME}} \
                 --template-file .aws-sam/build/template.yaml \
-                --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM \
+                --capabilities CAPABILITY_IAM \
                 --no-fail-on-empty-changeset \
                 --resolve-s3

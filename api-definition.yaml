@@ -67,7 +67,6 @@ paths:
   /store-data:
     post:
       x-amazon-apigateway-integration:
-        credentials: !GetAtt MyApiGatewayRole.Arn
         type: "AWS"
         uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${StoreDataFunction.Arn}/invocations"
         httpMethod: "POST"
