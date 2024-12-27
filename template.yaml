@@ -7,6 +7,8 @@ Resources:
     Properties:
       StageName: Dev
       DefinitionUri: api-definition.yaml
+      Variables:
+        LambdaFunction: !GetAtt StoreDataFunction.Arn
 
   StoreDataFunction:
     Type: AWS::Serverless::Function
