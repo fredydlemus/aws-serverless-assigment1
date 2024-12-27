@@ -8,7 +8,7 @@ Resources:
       StageName: Dev
       DefinitionUri: api-definition.yaml
       Variables:
-        LambdaFunction: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${StoreDataFunction.Arn}/invocations"
+        LambdaArn: !GetAtt StoreDataFunction.Arn
 
   StoreDataFunction:
     Type: AWS::Serverless::Function
