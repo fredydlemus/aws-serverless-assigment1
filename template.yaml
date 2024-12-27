@@ -18,7 +18,7 @@ Resources:
       MemorySize: 128
       Timeout: 30
 
-  MyLambdaPermission:
+  MyLambdaPermissionAssigment:
     Type: AWS::Lambda::Permission
     Properties:
       Action: lambda:InvokeFunction
