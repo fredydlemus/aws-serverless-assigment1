@@ -30,6 +30,12 @@ jobs:
             - name: Build SAM application
               run: sam build
 
+            - name: Package APP
+              run: sam package \
+                --template-file template.yaml \
+                --output-template-file packaged.yaml \
+                --resolve-s3
+
             - name: Deploy
               run: |
                 sam deploy --stack-name ${{env.STACK_NAME}} \

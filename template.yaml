@@ -6,9 +6,14 @@ Resources:
     Type: AWS::Serverless::Api
     Properties:
       StageName: Dev
-      DefinitionUri: api-definition.yaml
-      Variables:
-        LambdaArn: !GetAtt StoreDataFunction.Arn
+      DefinitionBody:
+        Fn::Transform:
+          Name: AWS::Include
+          Parameters:
+            Location: api-definition.yaml
+            LambdaArn: !GetAtt StoreDataFunction.Arn
+            Region: !Ref AWS::Region
+
 
   StoreDataFunction:
     Type: AWS::Serverless::Function
