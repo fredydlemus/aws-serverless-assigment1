@@ -24,7 +24,7 @@ Resources:
       Action: lambda:InvokeFunction
       FunctionName: !GetAtt StoreDataFunction.Arn
       Principal: apigateway.amazonaws.com
-      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiGatewayApiAssigment}"
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiGatewayApiAssigment}/*/*"
 
 Outputs:
   WebEndpoint:
