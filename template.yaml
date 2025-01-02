@@ -10,7 +10,7 @@ Resources:
         Fn::Transform:
           Name: AWS::Include
           Parameters:
-            Location: api-definition.yaml
+            Location: ./api-definition.yaml
 
   StoreDataFunction:
     Type: AWS::Serverless::Function
