@@ -11,9 +11,6 @@ Resources:
           Name: AWS::Include
           Parameters:
             Location: api-definition.yaml
-            LambdaArn: !GetAtt StoreDataFunction.Arn
-            Region: !Ref AWS::Region
-
 
   StoreDataFunction:
     Type: AWS::Serverless::Function

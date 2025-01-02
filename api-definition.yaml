@@ -68,7 +68,7 @@ paths:
     post:
       x-amazon-apigateway-integration:
         type: "AWS"
-        uri: arn:aws:apigateway:${Region}:lambda:path/2015-03-31/functions/${LambdaArn}/invocations
+        uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${StoreDataFunction.Arn}/invocations"
         httpMethod: "POST"
         passthroughBehavior: "WHEN_NO_MATCH"
         integrationHttpMethod: "POST"
