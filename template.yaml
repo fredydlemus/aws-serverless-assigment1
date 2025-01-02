@@ -10,7 +10,7 @@ Resources:
         Fn::Transform:
           Name: AWS::Include
           Parameters:
-            Location: ./api-definition.yaml
+            Location: !Sub: 'https://${ServerlessDeploymentBucket}.s3.${AWS::Region}.amazonaws.com/api-definition.yml'
 
   StoreDataFunction:
     Type: AWS::Serverless::Function
